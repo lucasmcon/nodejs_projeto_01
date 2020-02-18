@@ -3,7 +3,7 @@
     <%- include partials/navbar.ejs %>
     <div class="container">
         <hr>
-        <h1><%= pergunta.per_st_tit %></h1>
+        <h1><%= pergunta.id+"."+pergunta.per_st_tit %></h1>
         <p><%= pergunta.per_st_desc %></p>
         <hr>
         <form method="POST" action="/responder">
@@ -21,6 +21,9 @@
             <div class="card">
                 <div class="card-body">
                     <p><%= resposta.res_st_desc %></p>
+                </div>
+                <div class="card-footer">
+                    <p>Data da resposta: <%= resposta.createdAt %></p>
                 </div>
             </div>
         <% }) %>
