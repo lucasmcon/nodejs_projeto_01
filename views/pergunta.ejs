@@ -23,17 +23,28 @@
                     <p><%= resposta.res_st_desc %></p>
                 </div>
                 <div class="card-footer">
-                    <p>Data da resposta:<div id="dataFormatada"><%= resposta.createdAt %></div></p>
+                    <p>Data da resposta:<div class="dataFormatada"><%= resposta.createdAt %></div></p>
                 </div>
             </div>
         <% }) %>
     </div>
     <script>
+        var sd = document.getElementsByClassName('dataFormatada');
+        
+        for(var i = 0; i < sd.length; i++){
+            var element = sd[i]; var d = element.innerHTML;
+            var d = new Date(d); var options = { hour: 'numeric', minute: 'numeric' };
+
+            element.innerHTML = d.toLocaleDateString("pt-BR", options);
+
+        }
+        /*
         var dataDiv = document.getElementById('dataFormatada');
         var dataRaw = document.getElementById('dataFormatada').innerHTML;
         var data = new Date(dataRaw);
         var dataFormatada = data.toLocaleDateString();
         dataDiv.innerHTML = dataFormatada;
+        */
     </script>
 </body>
 <%- include partials/footer.ejs %>
