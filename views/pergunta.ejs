@@ -23,10 +23,17 @@
                     <p><%= resposta.res_st_desc %></p>
                 </div>
                 <div class="card-footer">
-                    <p>Data da resposta: <%= resposta.createdAt %></p>
+                    <p>Data da resposta:<div id="dataFormatada"><%= resposta.createdAt %></div></p>
                 </div>
             </div>
         <% }) %>
     </div>
+    <script>
+        var dataDiv = document.getElementById('dataFormatada');
+        var dataRaw = document.getElementById('dataFormatada').innerHTML;
+        var data = new Date(dataRaw);
+        var dataFormatada = data.toLocaleDateString();
+        dataDiv.innerHTML = dataFormatada;
+    </script>
 </body>
 <%- include partials/footer.ejs %>
