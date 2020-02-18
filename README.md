@@ -1,4 +1,4 @@
-# nodejs_projeto_01
-Primeiro projeto com NodeJS + Express + EJS
+# Projeto 01: NodeJS + Express + EJS + MySQL
 
-Projeto desenvolvido em curso de NodeJS.
+Primeiro projeto utilizando NodeJS, referente à esse [curso][https://www.udemy.com/course/formacao-nodejs/] que estou fazendo no Udemy.
+
